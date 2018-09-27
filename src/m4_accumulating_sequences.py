@@ -308,7 +308,7 @@ def draw_shapes(shapes, window):
 
     for i in range(len(shapes)):
         shapes[i].attach_to(window)
-    window.render(.3)
+        window.render(.3)
 
 
 def run_test_rectangles_from_circles():
@@ -410,7 +410,7 @@ def rectangles_from_circles(circles):
       :rtype: list of rg.Rectangles
     """
     # ------------------------------------------------------------------
-    # TODO: 10. Implement and test this function.
+    # DONE: 10. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     ####################################################################
@@ -421,12 +421,12 @@ def rectangles_from_circles(circles):
     #            in this function, so DON'T draw anything in here!
     ####################################################################
     # ------------------------------------------------------------------
-    rectangles = []
+    rec = []
 
     for i in range(len(circles)):
-        p1 = rg.Point(circles[i].center.x-circles[i].radius, circles[i].center.y-circles[i].radius/2)
-        p2 = rg.Point(circles[i].center.x+circles[i].radius, circles[i].center.y+circles[i].radius/2)
-        rec = rg.Rectangle(p1, p2)
+        p1 = rg.Point(circles[i].center.x-circles[i].radius, circles[i].center.y-circles[i].radius)
+        p2 = rg.Point(circles[i].center.x+circles[i].radius, circles[i].center.y+circles[i].radius)
+        rec = rec + [rg.Rectangle(p1, p2)]
     return rec
 
 
